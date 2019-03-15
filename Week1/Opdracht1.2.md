@@ -117,3 +117,21 @@ Unfortunately, there isn't much to do about this problem. As mentioned before, m
     - With slow or unstable internet, this page is very frustrating. There has to be something on the screen while loading.
 
 ## Device Lab
+> niet gelukt
+
+## Screen Reader
+
+Door te testen met een screenreader zie je niet alleen of blinden je website goed kunnen gebruiken, maar ook of je HTML structuur en semantiek juist is toegepast. 
+
+##### Afbeeldingen
+_Een screenreader natuurlijk geen afbeeldingen beschrijven. Daar is de "alt" tag voor. De "alt" tag zorgt ervoor dat een foto wordt beschreven als hij niet zichtbaar is, of voor schreenreaders. Wanneer er geen alt-tag is, leest de screenreader de source van een afbeeling voor. Dit is erg irritant voor mensen die met een screenreader proberen te navigeren binnen je website._
+
+- In de eerste instantie had ik een "alt" tag toegevoegd, maar ook een titel. Deze combinatie is niet handig, aangezien mijn titel hetzelfde is als mijn "alt" tag. Hierdoor leest een screenreader dezelfde tekst twee keer. Wanneer de afbeelding een sfeer-beeld is of de titel hetzelfde is als de alt tag, maak de tag dan wel aan maar laat hem leeg.
+
+##### Taalgebruik
+
+- Consistent zijn in taalgebruik is ook erg belangrijk. Een screenreader leest òf Nederlands òf Engels, hij kan zelf niet zien aan het woord in welke taal het gescreven is.
+Zorg dat het "lang" attribuut overeen komt met het taalgebruik op je pagina. Houdt er rekening mee dat wanneer de "lang" tag in het Nederlands staat, Engelse woorden in het Nederlands worden uitgesproken.
+
+
+
