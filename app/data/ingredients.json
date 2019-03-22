@@ -1,0 +1,82 @@
+{
+    "cleanser": {
+        "oil": {
+            "id": 1,
+            "name": "Oil Cleanser",
+            "skintypes": [
+                "oily",
+                "dry",
+                "combination",
+                "sensitive"
+            ],
+            "concern": []
+        },
+        "lotion": {
+            "id": 2,
+            "name": "Milk, cream or lotion cleanser",
+            "description": "",
+            "skintypes": [
+                "dry",
+                "normal",
+                "combination",
+                "sensitive"
+            ]
+        },
+        "gel": {
+            "id": 3,
+            "name": "Gel cleansers",
+            "description": "",
+            "skintypes": [
+                "normal",
+                "dry",
+                "combination",
+                "sensitive"
+            ]
+        },
+        "miscellar": {
+            "id": 4,
+            "name": "Miscellar water",
+            "description": "The micelles aren’t bound together into a molecule, which means they’ll rearrange easily. If the micellar water is poured onto a cotton wool pad, for example, it rearranges so that the heads are stuck to the cotton wool (made of cellulose, which is hydrophilic), and the tails stick out (the technical term for this is an oriented monolayer). This means there’s a neat oil-loving layer sitting on your cotton wool pad. Since make-up, sebum, grease and dirt are all oily, this means it’s perfect for cleaning your face at the end of the day.",
+            "skintypes": [
+                "oily",
+                "dry",
+                "normal",
+                "combination",
+                "sensitive"
+            ],
+            "source": "https://labmuffin.com/fact-check-what-is-micellar-water-and-how-does-it-work-an-update/"
+        },
+        "foaming": {
+            "id": 5,
+            "name": "Foaming cleanser",
+            "description": "",
+            "skintypes": [
+                "oily"
+            ],
+            "concern": {
+                "acne": {
+                    "description": "If you have acne, make sure you get a cleanser with low PH level (lower than 6). ",
+                    "source": "http://www.snowwhiteandtheasianpear.com/2014/09/skincare-discovery-why-ph-of-your.html"
+                }
+            }
+        }
+    },
+    "exfoliator": {
+        "bha": {
+            "id": 6,
+            "name": "Beta Hydroxy Acid",
+            "description": "",
+            "effecs": "",
+            "skintypes": [
+                "oily",
+                "combination"
+            ],
+            "concern": {
+                "acne": {
+                    "description": "If you have acne, make sure you get a cleanser with low PH level (lower than 6). ",
+                    "source": "http://www.snowwhiteandtheasianpear.com/2014/09/skincare-discovery-why-ph-of-your.html"
+                }
+            }
+        }
+    }
+}

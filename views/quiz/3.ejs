@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find out your routine</title>
+</head>
+<body>
+    <H1>What skin concerns do you want to focus on?</H1>
+    <form method="post" action="/quiz/4">
+        <input type="hidden" name="skin_type" value="<%- skin_type %>">
+        <input type="hidden" name="routine" value="<%- routine %>">
+
+        <input type="checkbox" id="31" name="skin_concern" value="acne">
+        <label for="acne">Acne</label>
+        
+        <input type="checkbox" id="32" name="skin_concern" value="age">
+        <label for="age">Signs of age</label>
+
+        <input type="checkbox" id="33" name="skin_concern" value="pigmentation">
+        <label for="pigmentation">Pigmentation</label>
+
+        <input type="checkbox" id="34" name="skin_concern" value="dehydration">
+        <label for="dehydration">Dehydration</label>
+
+        <input type="checkbox" id="35" name="skin_concern" value="blemishes">
+        <label for="blemishes">Blemishes and congestion</label>
+
+        <input type="checkbox" id="35" name="skin_concern" value="texture">
+        <label for="texture">Textural irregularities</label>
+
+        <a href="/quiz/2">go back</a>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

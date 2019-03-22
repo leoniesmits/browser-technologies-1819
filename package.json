@@ -1,0 +1,30 @@
+{
+  "name": "browser-technologies-1819",
+  "version": "1.0.0",
+  "description": "Progressive Enhancement in a quiz/survey",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoniesmits/browser-technologies-1819.git"
+  },
+  "keywords": [
+    "accesibility"
+  ],
+  "author": "Leonie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leoniesmits/browser-technologies-1819/issues"
+  },
+  "homepage": "https://github.com/leoniesmits/browser-technologies-1819#readme",
+  "devDependencies": {
+    "npm-start-command": "^1.0.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

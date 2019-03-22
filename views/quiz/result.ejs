@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find out your routine</title>
+</head>
+<body>
+    <H1>Your results</H1>
+   
+
+    <%if (shave == "yes") { %>
+        <p>If you shave, make sure you do it before the first step</p>
+    <% } %>
+
+    <h3>Personalized skin care routine for <%- skin_type %> skin</h3>
+
+    <h2><%- data.cleanser.oil.name %></h2>
+
+    <%if (routine == "short") { %>
+        <h2>Your 4 step routine:</h2>
+
+        <%if (makeup == "yes") { %>
+            <p>If you wear make-up, make sure you wash it off before the first step</p>
+        <% } %>
+    
+        <%if (skin_type == "dry") { %>
+            <h3>Dry</h3>
+            <h2><%- data.cleanser.oil.name %></h2>
+        <% } %>
+        
+        <%if (skin_type == "oily") { %>
+            <h3>not dry</h3>
+            <h2><%- data.cleanser.oil.name %></h2>
+        <% } %>
+
+        <%if (skin_type == "normal") { %>
+            <h3>not dry</h3>
+            <h2><%- data.cleanser.oil.name %></h2>
+        <% } %>
+
+        <%if (skin_type == "combination") { %>
+            <h3>not dry</h3>
+            <h2><%- data.cleanser.oil.name %></h2>
+        <% } %>
+
+        <%if (skin_type == "sensitive") { %>
+            
+        <% } %>
+    
+    <% } %>
+
+    <%if (routine == "medium") { %>
+        <h2>Your 6 step routine:</h2>
+
+        
+    <% } %>
+
+    <%if (routine == "long") { %>
+        <h2>Your 10 step routine:</h2>
+
+        
+    <% } %>
+    
+
+</body>
+</html>
