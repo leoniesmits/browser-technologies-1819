@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>Find out your routine</title>
 </head>
 <body>
     <H1>How long do you want your routine to be?</H1>
-    <form method="post" action="/quiz/2">
+    <form name="routine" method="post" action="/quiz/2" id="form1">
 
         
-
-        <input type="radio" id="1" name="routine" value="long">
-        <label for="long">Long</label>
-        <input type="radio" id="2" name="routine" value="medium">
-        <label for="Medium">Medium</label>
-        <input type="radio" id="3" name="routine" value="short">
-        <label for="short">Short</label>
+        <div>
+            <input type="radio" id="1" name="routine" value="long" required>
+            <label for="long">Long</label>
+        </div>
+        <div>
+            <input type="radio" id="2" name="routine" value="medium">
+            <label for="Medium">Medium</label>
+        </div>
+        <div>
+            <input type="radio" id="3" name="routine" value="short">
+            <label for="short">Short</label>
+        </div>
         
         <input type="submit" value="submit">
     </form>
+    <script src="../js/main.js"></script>
 </body>
 </html>

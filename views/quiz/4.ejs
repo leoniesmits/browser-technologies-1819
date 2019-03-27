@@ -8,28 +8,24 @@
     <title>Find out your routine</title>
 </head>
 <body>
-    <form method="post" action="/quiz/result">
+
+    <form method="post" action="/quiz/result" id="form4">
+        
         <input type="hidden" name="skin_type" value="<%- skin_type %>">
         <input type="hidden" name="routine" value="<%- routine %>">
         <input type="hidden" name="skin_concern" value="<%- skin_concern %>">
         
         <h2>Do you shave?</h2>
-        <input type="radio" id="41" name="shave" value="no">
+        <input type="radio" id="41" name="shave" value="no" required>
         <label for="no">no</label>
         <input type="radio" id="42" name="shave" value="yes">
         <label for="yes">yes</label>
 
         <h2>Do you wear make-up?</h2>
-        <input type="radio" id="43" name="makeup" value="no">
+        <input type="radio" id="43" name="makeup" value="no" required>
         <label for="no">no</label>
         <input type="radio" id="44" name="makeup" value="yes">
         <label for="yes">yes</label>
-
-
-        <input type="radio" id="12" name="routine_length" value="medium">
-        <label for="Medium">Medium</label>
-        <input type="radio" id="13" name="routine_length" value="short">
-        <label for="short">Short</label>
 
         <a href="/quiz/3">go back</a>
         <input type="submit" value="submit">

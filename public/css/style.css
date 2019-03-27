@@ -1,0 +1,16 @@
+h1 {
+    color: white;
+    text-align: center;
+    font-family: Inconsolata;
+}
+
+body {
+    background-color: #4564AD;
+}
+
+svg {
+    width: 27%;
+    position: absolute;
+    right: 30%;
+    bottom: 0;
+}

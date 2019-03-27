@@ -27,6 +27,7 @@ async function dataParse() {
 // for parsing application/xwww-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.static('public'))
 
 // const router = require('./router/router.js')
 
@@ -101,11 +102,10 @@ app.post('/quiz/4', function (req, res) {
 app.post('/quiz/result', async function (req, res) {
     await fs.readFile('./app/data/ingredients.json', (err, data) => {  
         if (err) throw err;
-        console.log('----', JSON.stringify(data))
         const state = {
             skin_type: req.body.skin_type,
             routine: req.body.routine,
-            skin_concern: req.body.skin_concern,
+            skin_concern: req.body.skin_concern.split(','),
             shave: req.body.shave,
             makeup: req.body.makeup,
             data:  JSON.parse(data)

@@ -8,31 +8,46 @@
     <title>Find out your routine</title>
 </head>
 <body>
-    <H1>How would you describe your skin type?</H1>
-    <form method="post" action="/quiz/3">
+    <section>
+        <H1>How would you describe your skin type?</H1>
+        <form method="post" action="/quiz/3" id="form2">
 
-        <input type="hidden" name="routine" value="<%- routine %>">
-        
+            <input type="hidden" name="routine" value="<%- routine %>">
+            
 
+            <div>
+                <input type="radio" id="1" name="skin_type" value="oily" required>
+                <label for="oily">Oily</label>
+            </div>
+            <div>
+                <input type="radio" id="2" name="skin_type" value="normal">
+                <label for="normal">Normal</label>
+            </div>
+            <div>
+                <input type="radio" id="3" name="skin_type" value="dry">
+                <label for="dry">Dry</label>
+            </div>
+            <div>
+                <input type="radio" id="4" name="skin_type" value="sensitive">
+                <label for="sensitive">Sensitive</label>
+            </div>
+            <div>
+                <input type="radio" id="5" name="skin_type" value="combination">
+                <label for="combination">Combination</label>
+            </div>
+            <div>
+                <input type="radio" id="6" name="skin_type" value="unknown">
+                <label for="unknown">I don't know</label>
+            </div>
 
-        <input type="radio" id="1" name="skin_type" value="oily">
-        <label for="oily">Oily</label>
-        <input type="radio" id="2" name="skin_type" value="normal">
-        <label for="normal">Normal</label>
-        <input type="radio" id="3" name="skin_type" value="dry">
-        <label for="dry">Dry</label>
-        <input type="radio" id="3" name="skin_type" value="sensitive">
-        <label for="sensitive">Sensitive</label>
-        <input type="radio" id="3" name="skin_type" value="combination">
-        <label for="combination">Combination</label>
+            
 
-        
+            
 
-        
-
-        <a href="/quiz/1">go back</a>
-        <input type="submit" value="submit">
-    </form>
+            <a href="/quiz/1">go back</a>
+            <input type="submit" value="submit">
+        </form>
+    </section>
 
 </body>
 </html>

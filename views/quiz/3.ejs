@@ -7,8 +7,9 @@
     <title>Find out your routine</title>
 </head>
 <body>
-    <H1>What skin concerns do you want to focus on?</H1>
-    <form method="post" action="/quiz/4">
+    <form method="post" action="/quiz/4" required id="form3">
+
+        <H1>What skin concerns do you want to focus on?</H1>
         <input type="hidden" name="skin_type" value="<%- skin_type %>">
         <input type="hidden" name="routine" value="<%- routine %>">
 

@@ -3,6 +3,10 @@
         "oil": {
             "id": 1,
             "name": "Oil Cleanser",
+            "type": "cleanser",
+            "description": "The basic idea behind oil cleansing is dissolution theory - or, more simply “like dissolves like” - oil is able to dissolve and remove substances with a similar chemical structure. Lucky for us, this includes stuff like dirt, oil, and makeup.",
+            "effects": "Oil can be a powerful solvent, but is also incredibly gentle. It’s great at getting rid of all the dirt and product you want off of your face without over cleansing and stripping your skin.",
+            "directions": "Apply a small amount to wet skin, gently massage over face and eye area, rinse thoroughly, and pat skin dry with a soft, clean towel. However, some cleansing oils work best applied to dry skin, and then you either rinse with water or splash with water and work the oil into a milky emulsion before rinsing. Consult the directions on the cleansing oil you’re considering, but feel free to experiment to see which method works best for you.",
             "skintypes": [
                 "oily",
                 "dry",
@@ -14,34 +18,38 @@
         "lotion": {
             "id": 2,
             "name": "Milk, cream or lotion cleanser",
-            "description": "",
+            "type": "cleanser",
+            "description": "Cream cleansers are usually thick, creamy and contain moisturizing ingredients like botanical oils. They gently cleanse your skin without stripping it of its natural oils. These are cleansers that also moisturize your skin.",
+            "effects": "",
+            "directions": "",
             "skintypes": [
-                "dry",
                 "normal",
-                "combination",
+                "dry",
                 "sensitive"
             ]
         },
         "gel": {
             "id": 3,
             "name": "Gel cleansers",
-            "description": "",
+            "type": "cleanser",
+            "description": "Gel cleansers are clear and, as the name suggests, have a gel-like consistency. Generally designed for deep cleansing, they are effective at decongesting clogged pores, removing excess oil and killing acne-causing bacteria, thanks to their antiseptic and exfoliating properties. Usually they are lightweight, hydrating products. A good cleansing gel easily removes light make-up, moisturises your skin and leaves your skin feeling fresh.",
+            "effects": "",
+            "directions": "",
             "skintypes": [
                 "normal",
-                "dry",
-                "combination",
-                "sensitive"
+                "oily",
+                "combination"
             ]
         },
         "miscellar": {
             "id": 4,
             "name": "Miscellar water",
-            "description": "The micelles aren’t bound together into a molecule, which means they’ll rearrange easily. If the micellar water is poured onto a cotton wool pad, for example, it rearranges so that the heads are stuck to the cotton wool (made of cellulose, which is hydrophilic), and the tails stick out (the technical term for this is an oriented monolayer). This means there’s a neat oil-loving layer sitting on your cotton wool pad. Since make-up, sebum, grease and dirt are all oily, this means it’s perfect for cleaning your face at the end of the day.",
+            "type": "cleanser",
+            "description": "Originating in France, micellar waters feature “micelles”—or tiny oil molecules suspended in soft water—that attract oil, dirt and makeup. Another great thing about them: You don’t need to rinse them off with water. Since make-up, sebum, grease and dirt are all oily, this means it’s perfect for cleaning your face at the end of the day.",
+            "effects": "",
+            "directions": "",
             "skintypes": [
-                "oily",
                 "dry",
-                "normal",
-                "combination",
                 "sensitive"
             ],
             "source": "https://labmuffin.com/fact-check-what-is-micellar-water-and-how-does-it-work-an-update/"
@@ -49,24 +57,34 @@
         "foaming": {
             "id": 5,
             "name": "Foaming cleanser",
-            "description": "",
+            "type": "cleanser",
+            "description": "Foam cleansers are lightweight cleansers that start out as cream or gel and burst into a rich, foamy lather. This type of cleanser removes excess oil as effectively as gel cleansers.",
+            "effects": "",
+            "directions": "",
             "skintypes": [
-                "oily"
-            ],
-            "concern": {
-                "acne": {
-                    "description": "If you have acne, make sure you get a cleanser with low PH level (lower than 6). ",
-                    "source": "http://www.snowwhiteandtheasianpear.com/2014/09/skincare-discovery-why-ph-of-your.html"
-                }
+                "oily",
+                "combination"
+            ]
+        },
+        "concern": {
+            "acne": {
+                "description": "If you have acne, make sure you get a cleanser with low PH level (lower than 6). ",
+                "source": "http://www.snowwhiteandtheasianpear.com/2014/09/skincare-discovery-why-ph-of-your.html"
             }
         }
     },
     "exfoliator": {
-        "bha": {
+        "salicylic": {
             "id": 6,
-            "name": "Beta Hydroxy Acid",
-            "description": "",
-            "effecs": "",
+            "name": "Salicylic Acid",
+            "type": "Beta Hydroxy Acid",
+            "description": "There is only one BHA – beta hydroxy acid – more commonly known as salicylic acid. Because it is oil-soluble it can penetrate beneath the skin’s surface, cleaning out excess sebum from the pores and reducing oiliness. ",
+            "effecs": [
+                "Treats acne",
+                "Can help control oil, which means it’s a good choice for oily skin",
+                "Can help treat blackheads and sebaceous filaments"
+            ],
+            "directions": "Start slow! Since BHAs can be drying, it’s important to introduce them carefully into your routine. Avoid using BHAs in a routine with too many other potentially irritating ingredients (benzoyl peroxide, AHAs, retinoids, etc.) and above all, listen to your skin! Start by using the product twice a week, then slowly increase the frequency based on how your skin feels. If you experience irritation, cut down on how often you use it. You may end up using your BHA only once or twice a week, and that’s totally okay! Since BHAs are actives, it’s helpful to give them some time to absorb before applying your next product (i.e. serum, moisturizer, etc.)",
             "skintypes": [
                 "oily",
                 "combination"
@@ -77,6 +95,61 @@
                     "source": "http://www.snowwhiteandtheasianpear.com/2014/09/skincare-discovery-why-ph-of-your.html"
                 }
             }
+        },
+        "glycolic": {
+            "id": 7,
+            "name": "Glycolic Acid",
+            "type": "Alpha Hydroxy Acid",
+            "description": "The strongest AHA, derived from sugar cane. This acid should not be used on sensitive, peeling or compromised skin. Anything above a 10% concentration is high and needs to be used with knowledge and caution. A percentage that is too high – used on skin that is not ready – can cause redness, irritation, ‘frosting’, pigmentation and thinned skin.",
+            "effecs": [
+                "Provides a remarkably even exfoliation of the skin",
+                "A very effective acne treatment",
+                "A good glycolic acid product helps to reduce fine lines and signs of premature aging by increasing cell turnover – meaning younger, healthier cells are now visible on the skin’s surface",
+                "Acne scars (and other scar lesions) respond well to consistent glycolic acid treatment",
+                "It minimizes the appearance of pores by keeping them clear and helping the surrounding cells to strengthen and regain elasticity"
+            ],
+            "directions": "If you're unexperienced with direct acids, it's best to slowly build up. Apply the acid once a week and build up from there to three times a week. You can even wash it off after 20 minutes if you feel it's too strong.",
+            "skintypes": [
+                "oily",
+                "normal"
+            ]
+        },
+        "lactic": {
+            "id": 8,
+            "name": "Lactic Acid",
+            "type": "Alpha Hydroxy Acid",
+            "description": "Lactic acid is derived from (sour) milk, and is known for its skin softening abilities. A product with diluted lactic acid can even be gentle enough to exfoliate the sensitive skin under your eyes, while higher percentages are used in certain professional-use-only chemical peels. This ingredient is extremely versatile.",
+            "effecs": [
+                "Reducing fine lines",
+                "Improving skin tone and texture", 
+                "Brightening the skin and fading pigmentation",
+                "Controlling and preventing oiliness and breakouts",
+                "consistent use of AHA’s helps stimulate/improve collagen production, which means firmer skin and less wrinkles."
+            ],
+            "skintypes": [
+                "oily",
+                "combination",
+                "normal",
+                "dry",
+                "sensitive"
+            ]
+        },
+        "mandelic": {
+            "id": 9,
+            "name": "Mandelic Acid",
+            "type": "Alpha Hydroxy Acid",
+            "description": "The most gentle AHA, very suitable for those with sensitive skin. This ingredient is derived from bitter almonds.",
+            "effecs": "",
+            "skintypes": [
+                "dry",
+                "combination",
+                "sensitive"
+            ]
         }
+    },
+    "actives": {},
+    "treatments": {},
+    "moisturizer": {
+
     }
 }

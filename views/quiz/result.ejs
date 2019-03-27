@@ -8,61 +8,87 @@
     <title>Find out your routine</title>
 </head>
 <body>
-    <H1>Your results</H1>
-   
-
-    <%if (shave == "yes") { %>
-        <p>If you shave, make sure you do it before the first step</p>
-    <% } %>
-
-    <h3>Personalized skin care routine for <%- skin_type %> skin</h3>
-
-    <h2><%- data.cleanser.oil.name %></h2>
-
-    <%if (routine == "short") { %>
-        <h2>Your 4 step routine:</h2>
-
-        <%if (makeup == "yes") { %>
-            <p>If you wear make-up, make sure you wash it off before the first step</p>
-        <% } %>
     
-        <%if (skin_type == "dry") { %>
-            <h3>Dry</h3>
-            <h2><%- data.cleanser.oil.name %></h2>
-        <% } %>
-        
-        <%if (skin_type == "oily") { %>
-            <h3>not dry</h3>
-            <h2><%- data.cleanser.oil.name %></h2>
-        <% } %>
-
-        <%if (skin_type == "normal") { %>
-            <h3>not dry</h3>
-            <h2><%- data.cleanser.oil.name %></h2>
-        <% } %>
-
-        <%if (skin_type == "combination") { %>
-            <h3>not dry</h3>
-            <h2><%- data.cleanser.oil.name %></h2>
-        <% } %>
-
-        <%if (skin_type == "sensitive") { %>
+    
+        <section>
+        <%if (routine == "short") { %>
             
-        <% } %>
+                <%if (makeup == "yes") { %>
+                    <p>If you wear make-up, make sure you wash it off before the first step</p>
+                <% } %>
+                
+        <% } %>    
+                
+            
+
+            <%if (skin_type == "unknown") { %>
+                <h2>Your personalized skin care <%- routine %> routine</h2>
+                <p>Note that you didn't specify your skin type, so the reccomendations can be off for you.</p>
+            <% } else {%>
+                <h2>Your personalized <%- routine %> routine for <%- skin_type %> skin</h2>
+            <% } %>
+            <%if (shave == "yes") { %>
+                <p>If you shave, make sure you do it before the first step</p>
+            <% } %>
+
+                <ol>   
+
+                    <%if (routine == "medium" || routine == "long") { %>
+                        <li>
+                            <h3><%- data.cleanser.oil.name %></h3>
+                        </li>
+                    <% } %>
+                    <li>
+                        <h2>Water based cleanser:</h2>
+                        <%if (skin_type == "sensitive" || skin_type == "dry") { %>
+                                <h3><%- data.cleanser.lotion.name %></h3>
+                                <p><%- data.cleanser.lotion.description %></p>
+                        <% } %>
+
+                        <%if (skin_type == "oily" || skin_type == "combination") { %>
+                                <h3><%- data.cleanser.foaming.name %></h3>
+                                <p><%- data.cleanser.foaming.description %></p>
+                        <% } %>
+
+                        <%if (skin_type == "oily" || skin_type == "combination" || skin_type == "normal") { %>
+                                <h3><%- data.cleanser.gel.name %></h3>
+                                <p><%- data.cleanser.gel.description %></p>
+                        <% } %>
+
+                        <%if (skin_type == "sensitive" || routine == "dry") { %>
+                            <h3><%- data.cleanser.miscellar.name %></h3>
+                            <p><%- data.cleanser.miscellar.description %> <a href=<%- data.cleanser.miscellar.source %>>source</a></p>
+                        <% } %>
+
+                        <%if (skin_concern[0] == "acne" || skin_concern[1] == "acne" || skin_concern[2] == "acne") { %>
+                            <p><%- data.cleanser.concern.acne.description %></p>
+                        <% } %>
+                        
+                    </li>
+                    <%if (routine == "medium" || routine == "long") { %>
+                        <li>
+                            <h2>Exfoliator</h2>
+                            <h3><%- data.exfoliator.lactic.name %></h3>
+                        </li>
+                    <% } %>
+
+                </ol>
+           
+
+   
+    <% if(skin_type == "oily" && skin_concern[0] == "pigmentation") { %>
+        <p>Oilier skin is prone to PIH (post-inflammatory hyperpigmentation), a condition which leaves dark spots on the skin after a breakout has healed.</p>
+    <% } %>
+
+        </section>
     
-    <% } %>
 
-    <%if (routine == "medium") { %>
-        <h2>Your 6 step routine:</h2>
 
-        
-    <% } %>
+    
 
-    <%if (routine == "long") { %>
-        <h2>Your 10 step routine:</h2>
 
-        
-    <% } %>
+
+
     
 
 </body>
