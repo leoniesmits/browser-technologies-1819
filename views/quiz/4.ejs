@@ -5,31 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>Find out your routine</title>
 </head>
 <body>
+    <section>
+        <form name="additional" method="post" action="/quiz/result" id="form4">
 
-    <form method="post" action="/quiz/result" id="form4">
-        
-        <input type="hidden" name="skin_type" value="<%- skin_type %>">
-        <input type="hidden" name="routine" value="<%- routine %>">
-        <input type="hidden" name="skin_concern" value="<%- skin_concern %>">
-        
-        <h2>Do you shave?</h2>
-        <input type="radio" id="41" name="shave" value="no" required>
-        <label for="no">no</label>
-        <input type="radio" id="42" name="shave" value="yes">
-        <label for="yes">yes</label>
+            <input type="hidden" name="skin_type" value="<%- skin_type %>">
+            <input type="hidden" name="routine" value="<%- routine %>">
+            <input type="hidden" name="skin_concern" value="<%- skin_concern %>">
+            
+            <h1>Do you shave?</h1>
+            <label><input type="radio" id="41" name="shave" value="no" required>no</label>
+            
+            <label><input type="radio" id="42" name="shave" value="yes">yes</label>
 
-        <h2>Do you wear make-up?</h2>
-        <input type="radio" id="43" name="makeup" value="no" required>
-        <label for="no">no</label>
-        <input type="radio" id="44" name="makeup" value="yes">
-        <label for="yes">yes</label>
+            <h1>Do you wear make-up?</h1>
+            
+            <label><input type="radio" id="43" name="makeup" value="no" required>no</label>
+            
+            <label><input type="radio" id="44" name="makeup" value="yes">yes</label>
 
-        <a href="/quiz/3">go back</a>
-        <input type="submit" value="submit">
-    </form>
-
+            <input type="submit" value="submit">
+        </form>
+        <progress id="progress" max="100" value="75"></progress>
+    </section>
+    <script src="../js/main.js"></script>
 </body>
 </html>

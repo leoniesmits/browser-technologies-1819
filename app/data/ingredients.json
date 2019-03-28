@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Oil Cleanser",
             "type": "cleanser",
-            "description": "The basic idea behind oil cleansing is dissolution theory - or, more simply “like dissolves like” - oil is able to dissolve and remove substances with a similar chemical structure. Lucky for us, this includes stuff like dirt, oil, and makeup.",
+            "description": "The basic idea behind oil cleansing is dissolution theory - or, more simply “like dissolves like” - oil is able to dissolve and remove substances with a similar chemical structure. Lucky for us, this includes stuff like dirt, oil, and makeup. This is the first step of the double cleansing method, something that's crucial for good skincare according to Korean experts. The next step is cleansing with an water based cleansing to deeper clean the pores.",
             "effects": "Oil can be a powerful solvent, but is also incredibly gentle. It’s great at getting rid of all the dirt and product you want off of your face without over cleansing and stripping your skin.",
             "directions": "Apply a small amount to wet skin, gently massage over face and eye area, rinse thoroughly, and pat skin dry with a soft, clean towel. However, some cleansing oils work best applied to dry skin, and then you either rinse with water or splash with water and work the oil into a milky emulsion before rinsing. Consult the directions on the cleansing oil you’re considering, but feel free to experiment to see which method works best for you.",
             "skintypes": [
@@ -70,6 +70,9 @@
             "acne": {
                 "description": "If you have acne, make sure you get a cleanser with low PH level (lower than 6). ",
                 "source": "http://www.snowwhiteandtheasianpear.com/2014/09/skincare-discovery-why-ph-of-your.html"
+            },
+            "dehydration": {
+                "description": "cleanse dehydrated skin is with a gentle cleanser and lukewarm water. Choose cleansers that are free of harsh chemical additives and artificial fragrances that can strip the skin of beneficial moisture and aggravate sensitivities."
             }
         }
     },
@@ -101,7 +104,7 @@
             "name": "Glycolic Acid",
             "type": "Alpha Hydroxy Acid",
             "description": "The strongest AHA, derived from sugar cane. This acid should not be used on sensitive, peeling or compromised skin. Anything above a 10% concentration is high and needs to be used with knowledge and caution. A percentage that is too high – used on skin that is not ready – can cause redness, irritation, ‘frosting’, pigmentation and thinned skin.",
-            "effecs": [
+            "effects": [
                 "Provides a remarkably even exfoliation of the skin",
                 "A very effective acne treatment",
                 "A good glycolic acid product helps to reduce fine lines and signs of premature aging by increasing cell turnover – meaning younger, healthier cells are now visible on the skin’s surface",
@@ -147,8 +150,12 @@
             ]
         }
     },
-    "actives": {},
-    "treatments": {},
+    "actives": {
+
+    },
+    "treatments": {
+
+    },
     "moisturizer": {
 
     }

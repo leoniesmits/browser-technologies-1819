@@ -8,25 +8,20 @@
     <title>Find out your routine</title>
 </head>
 <body>
-    <H1>How long do you want your routine to be?</H1>
-    <form name="routine" method="post" action="/quiz/2" id="form1">
+    <section>
+        <H1>How long do you want your routine to be?</H1>
+        <form name="routine" method="post" action="/quiz/2" id="form1">
 
-        
-        <div>
-            <input type="radio" id="1" name="routine" value="long" required>
-            <label for="long">Long</label>
-        </div>
-        <div>
-            <input type="radio" id="2" name="routine" value="medium">
-            <label for="Medium">Medium</label>
-        </div>
-        <div>
-            <input type="radio" id="3" name="routine" value="short">
-            <label for="short">Short</label>
-        </div>
-        
-        <input type="submit" value="submit">
-    </form>
+                <label> <input type="radio" id="1" name="routine" value="long" required>Long</label>
+
+                <label><input type="radio" id="2" name="routine" value="medium"><span>Medium</span></label>
+                
+                <label><input type="radio" id="3" name="routine" value="short">Short</label>
+            
+            <input type="submit" value="submit">
+        </form>
+        <progress id="progress" max="100" value="0"></progress>
+    </section>
     <script src="../js/main.js"></script>
 </body>
 </html>

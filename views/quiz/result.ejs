@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title>Find out your routine</title>
 </head>
 <body>
     
     
         <section>
+            
+            <% skin_concern.forEach(function(concern){ %>
+                <h1><%- concern %></h1>
+            <%  }); %>
         <%if (routine == "short") { %>
             
                 <%if (makeup == "yes") { %>
@@ -19,14 +24,7 @@
                 
         <% } %>    
                 
-            
-
-            <%if (skin_type == "unknown") { %>
-                <h2>Your personalized skin care <%- routine %> routine</h2>
-                <p>Note that you didn't specify your skin type, so the reccomendations can be off for you.</p>
-            <% } else {%>
-                <h2>Your personalized <%- routine %> routine for <%- skin_type %> skin</h2>
-            <% } %>
+            <h1>Your personalized routine for <%- skin_type %> skin.</h2>
             <%if (shave == "yes") { %>
                 <p>If you shave, make sure you do it before the first step</p>
             <% } %>
@@ -34,42 +32,87 @@
                 <ol>   
 
                     <%if (routine == "medium" || routine == "long") { %>
+                        
                         <li>
-                            <h3><%- data.cleanser.oil.name %></h3>
+                            <details>
+                                <summary><h2><%- data.cleanser.oil.name %></h2></summary>
+                                <span>Description:</span><p class="description"><%- data.cleanser.oil.description %></p>
+                                <span>The effects:</span><p class="effects"><%- data.cleanser.oil.effects %></p>
+                                <span>Directions:</span><p class="directions"><%- data.cleanser.oil.directions %></p>
+                            </details>
                         </li>
                     <% } %>
+
                     <li>
-                        <h2>Water based cleanser:</h2>
-                        <%if (skin_type == "sensitive" || skin_type == "dry") { %>
-                                <h3><%- data.cleanser.lotion.name %></h3>
-                                <p><%- data.cleanser.lotion.description %></p>
-                        <% } %>
+                        <details>
+                            <summary><h2>Water based cleanser:</h2></summary>
+                            <%if (skin_type == "sensitive" || skin_type == "dry") { %>
+                                    <h3><%- data.cleanser.lotion.name %></h3>
+                                    <p><%- data.cleanser.lotion.description %></p>
+                            <% } %>
 
-                        <%if (skin_type == "oily" || skin_type == "combination") { %>
-                                <h3><%- data.cleanser.foaming.name %></h3>
-                                <p><%- data.cleanser.foaming.description %></p>
-                        <% } %>
+                            <%if (skin_type == "oily" || skin_type == "combination") { %>
+                                    <h3><%- data.cleanser.foaming.name %></h3>
+                                    <p><%- data.cleanser.foaming.description %></p>
+                            <% } %>
 
-                        <%if (skin_type == "oily" || skin_type == "combination" || skin_type == "normal") { %>
-                                <h3><%- data.cleanser.gel.name %></h3>
-                                <p><%- data.cleanser.gel.description %></p>
-                        <% } %>
+                            <%if (skin_type == "oily" || skin_type == "combination" || skin_type == "normal") { %>
+                                    <h3><%- data.cleanser.gel.name %></h3>
+                                    <p><%- data.cleanser.gel.description %></p>
+                            <% } %>
 
-                        <%if (skin_type == "sensitive" || routine == "dry") { %>
-                            <h3><%- data.cleanser.miscellar.name %></h3>
-                            <p><%- data.cleanser.miscellar.description %> <a href=<%- data.cleanser.miscellar.source %>>source</a></p>
-                        <% } %>
+                            <%if (skin_type == "sensitive" || skin_type == "dry") { %>
+                                <h3><%- data.cleanser.miscellar.name %></h3>
+                                <p><%- data.cleanser.miscellar.description %> <a href=<%- data.cleanser.miscellar.source %>>source</a></p>
+                            <% } %>
 
-                        <%if (skin_concern[0] == "acne" || skin_concern[1] == "acne" || skin_concern[2] == "acne") { %>
-                            <p><%- data.cleanser.concern.acne.description %></p>
-                        <% } %>
-                        
+                            <%if (skin_concern[0] == "acne" || skin_concern[1] == "acne" || skin_concern[2] == "acne") { %>
+                                <p><%- data.cleanser.concern.acne.description %></p>
+                            <% } %>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary><h2>Exfoliator</h2></summary>
+                            <%if (skin_type == "sensitive" || skin_type == "dry") { %>
+                                <h3><%- data.exfoliator.mandelic.name %></h3>
+                            <% } %>
+                            <%if (skin_type == "oily" || skin_type == "combination") { %>
+                                <h3><%- data.exfoliator.salicylic.name %></h3>
+                            <% } %>
+                            <%if (skin_type == "oily" || skin_type == "normal") { %>
+                                <h3><%- data.exfoliator.glycolic.name %></h3>
+                                <p><%- data.exfoliator.glycolic.type %></p>
+                                <ul>
+                                    <% data.exfoliator.glycolic.effects.forEach(function(effects){ %>
+                                        <li><%- effects %></li>
+                                    <%  }); %>
+                                </ul>
+                                <p><%- data.exfoliator.glycolic.description %></p>
+                            <% } %>
+                            <%if (skin_type == "oily" || skin_type == "normal") { %>
+                                <h3><%- data.exfoliator.salicylic.name %></h3>
+                                <p><%- data.exfoliator.salicylic.type %></p>
+                                <ul><%- data.exfoliator.salicylic.effects %></ul>
+                                <p><%- data.exfoliator.salicylic.description %></p>
+                            <% } %>
+                            <%if (skin_concern == "pigmentation" || skin_concern[0] == "pigmentation" || skin_concern[0] == "age") { %>
+                                <p><%- data.cleanser.concern.acne.description %></p>
+                            <% } %>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary><h2>Toner</h2></summary>
+                            <% if (skin_type == "oily" && skin_concern[0] == "acne" || skin_concern[1] == "acne") { %>
+                                <h3>Acid toner</h3>
+                            <% } else { %>
+                                <h3>Hydrating toner</h3>
+                            <% } %>
+                        </details>
                     </li>
                     <%if (routine == "medium" || routine == "long") { %>
-                        <li>
-                            <h2>Exfoliator</h2>
-                            <h3><%- data.exfoliator.lactic.name %></h3>
-                        </li>
+                        
                     <% } %>
 
                 </ol>
