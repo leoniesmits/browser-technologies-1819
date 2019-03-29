@@ -118,7 +118,7 @@ app.post('/quiz/result', async function (req, res) {
         const state = {
             skin_type: req.body.skin_type,
             routine: req.body.routine,
-            skin_concern: req.body.skin_concern,
+            skin_concern: req.body.skin_concern.split(','),
             shave: req.body.shave,
             makeup: req.body.makeup,
             data:  JSON.parse(data)
