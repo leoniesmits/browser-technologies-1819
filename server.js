@@ -43,12 +43,6 @@ app.get('/quiz', function (req, res) {
     res.render('quiz')
 })
 
-// app.get('/quiz', function (req, res) {
-//     res.render('quiz' , {
-
-//     })
-// })
-
 app.get('/quiz/1', function (req, res) {
 
     res.render('quiz/1')
@@ -151,4 +145,4 @@ app.get('/quiz/results', async function (req, res) {
 // })
 
 
-app.listen(config.port, () => console.log(`Example app listening on port ${config.port}!`))
+app.listen(config.port, () => console.log(`${config.port} is the magic port!`))

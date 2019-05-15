@@ -105,11 +105,11 @@
             "type": "Alpha Hydroxy Acid",
             "description": "The strongest AHA, derived from sugar cane. This acid should not be used on sensitive, peeling or compromised skin. Anything above a 10% concentration is high and needs to be used with knowledge and caution. A percentage that is too high – used on skin that is not ready – can cause redness, irritation, ‘frosting’, pigmentation and thinned skin.",
             "effects": [
-                "Provides a remarkably even exfoliation of the skin",
-                "A very effective acne treatment",
-                "A good glycolic acid product helps to reduce fine lines and signs of premature aging by increasing cell turnover – meaning younger, healthier cells are now visible on the skin’s surface",
-                "Acne scars (and other scar lesions) respond well to consistent glycolic acid treatment",
-                "It minimizes the appearance of pores by keeping them clear and helping the surrounding cells to strengthen and regain elasticity"
+                "Even exfoliates the skin",
+                "Treats acne",
+                "Helps to reduce fine lines and signs of premature aging",
+                "Reduce acne scars",
+                "Minimizes pores"
             ],
             "directions": "If you're unexperienced with direct acids, it's best to slowly build up. Apply the acid once a week and build up from there to three times a week. You can even wash it off after 20 minutes if you feel it's too strong.",
             "skintypes": [
@@ -123,11 +123,11 @@
             "type": "Alpha Hydroxy Acid",
             "description": "Lactic acid is derived from (sour) milk, and is known for its skin softening abilities. A product with diluted lactic acid can even be gentle enough to exfoliate the sensitive skin under your eyes, while higher percentages are used in certain professional-use-only chemical peels. This ingredient is extremely versatile.",
             "effecs": [
-                "Reducing fine lines",
-                "Improving skin tone and texture", 
-                "Brightening the skin and fading pigmentation",
+                "Reduces fine lines",
+                "Improves skin tone and texture", 
+                "Brightening fading pigmentation",
                 "Controlling and preventing oiliness and breakouts",
-                "consistent use of AHA’s helps stimulate/improve collagen production, which means firmer skin and less wrinkles."
+                "Stimulates collagen production"
             ],
             "skintypes": [
                 "oily",

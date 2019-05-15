@@ -2,6 +2,8 @@
     --blue: #0062FF;
     --pink: #E63462;
     --dark: #333333;
+    --success: #0062FF;
+    --error: #E63462;
     --headerfont: Raleway;
     --bodyfont: Raleway, PT Serif;
 }
@@ -120,17 +122,17 @@ input[type="submit"] {
     align-self: flex-end;
 }
 
-.checkbox-form {
+form {
     display: flex;
     flex-flow: column;
     align-items: center;
 }
 
- .checkbox-form input[type="checkbox"] {
+form input[type="checkbox"] {
     opacity: 0;
 }
 
-.checkbox-form label {
+form label {
     position: relative;
     display: block;
     padding-left: 1em;
@@ -183,6 +185,10 @@ input[type="submit"] {
 .checkbox-form input[type="checkbox"]:checked + span::after {
     content: "";
     opacity: 1;
+}
+
+.js-enabled .action-button {
+    display: none;
 }
 
 

@@ -110,6 +110,7 @@ As Ischa Gast said:
 ```
 In this EJS template, the heading is the clickable part of the drop down, all information that follows is hidden. 
 
+Client side javascript:
 ```javascript
 if (!('open' in document.createElement('details'))) {
     if (document.querySelectorAll && document.createElement('_').classList) {
@@ -125,6 +126,22 @@ if (!('open' in document.createElement('details'))) {
     }
   }
 ```
+CSS:
+```CSS
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
+```
+
+Older browsers display a list with every detail element under each other, which isn't that much of a problem because all users can still see the content. I used Javascript to still make it interactive for users. According to my core functionality pyramid, making the content more readable is part of the page being "usable". 
+
+_On a side note; this element DOES work in .md files._
+<details><summary>Look</summary>How crazy is that</details>
+
+
 
 ## Accesibility
 > Accesibility gets overlooked by a lot of designers and developers, though it's easy to test. [Ischa Gast](https://ischagast.nl/) gave us an awesome presentation at Schiphol and showed us what happens when people with disabilities try to use the web.
