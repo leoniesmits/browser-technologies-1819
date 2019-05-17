@@ -30,10 +30,12 @@ if (window.XMLHttpRequest) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(html, "text/html");
         var docForm = doc.body.querySelector('form');
-        // console.log(docForm)
+        console.log(docForm)
         return docForm
     }).catch(function(err) {console.log('Failed to fetch page: ', err);});
 
+    // var formRequest4 = formRequest('http://localhost:2000/quiz/4');
+    
     var formRequest4 = fetch('http://localhost:2000/quiz/4', {method: 'POST'}).then(function(response) {
       return response.text()})
       .then(function(html) {
@@ -44,7 +46,8 @@ if (window.XMLHttpRequest) {
         return docForm
     }).catch(function(err) {console.log('Failed to fetch page: ', err);});
 
-    var combinedForms = {'form1':{},'form2':{},'form3':{},'form4':{}};
+    // var combinedForms = [{'form1':'','form2':'','form3':'','form4':''}];
+    var combinedForms = [];
     Promise.all([formRequest1,formRequest2,formRequest3,formRequest4]).then(function(values){
 
       combinedForms["form1"] = values[0];
@@ -52,13 +55,30 @@ if (window.XMLHttpRequest) {
       combinedForms["form3"] = values[2];
       combinedForms["form4"] = values[3];
 
-      console.log(".....", combinedForms)
       return combinedForms
     })
-    console.log(combinedForms)
-  };
+    
+    console.log(combinedForms.form1)  
+    
+    function formRequest(formURL){
+      fetch(formURL, {method: 'POST'}).then(function(response){
+        return response.text()})
+        .then(function(html) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, "text/html");
+          var docForm = doc.body.querySelector('form');
+          console.log(docForm)
+          return docForm
+      }).catch(function(err) {console.log('Failed to fetch page: ', err);});
+    } 
+};
+
+
+
 
   var startScreen = querySelector('.start');
+
+  
   
 
 
