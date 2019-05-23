@@ -4,19 +4,19 @@
 
   if (window.XMLHttpRequest) {
     console.log("yes")
-    var formRequest1 = fetch('http://localhost:2000/quiz/1', {
-        method: 'GET'
-      }).then(function (response) {
-        return response.text()
-      })
-      .then(function (html) {
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(html, "text/html");
-        var docForm = doc.body.querySelector('form');
-        return docForm
-      }).catch(function (err) {
-        console.log('Failed to fetch page: ', err);
-      });
+    // var formRequest1 = fetch('http://localhost:2000/quiz/1', {
+    //     method: 'GET'
+    //   }).then(function (response) {
+    //     return response.text()
+    //   })
+    //   .then(function (html) {
+    //     var parser = new DOMParser();
+    //     var doc = parser.parseFromString(html, "text/html");
+    //     var docForm = doc.body.querySelector('form');
+    //     return docForm
+    //   }).catch(function (err) {
+    //     console.log('Failed to fetch page: ', err);
+    //   });
 
     var formRequest2 = fetch('http://localhost:2000/quiz/2', {
         method: 'POST'
@@ -31,8 +31,8 @@
       }).catch(function (err) {
         console.log('Failed to fetch page: ', err);
       });
-    
-      
+
+
     var formRequest1 = formRequest('http://localhost:2000/quiz/1', 'GET').then((result) => {
       return result;
     });
@@ -42,6 +42,9 @@
     var formRequest3 = formRequest('http://localhost:2000/quiz/3', 'POST').then((result) => {
       return result;
     });
+    var formRequest4 = formRequest('http://localhost:2000/quiz/4', 'POST').then((result) => {
+      return result;
+    })
     // console.log(formRequest3)
     // var formRequest3 = fetch('http://localhost:2000/quiz/3', {method: 'POST'}).then(function(response) {
     //   return response.text()})
@@ -72,28 +75,6 @@
 
 
 
-    var combinedForms = [];
-
-    var x = async function check() {
-      let result = await Promise.all([formRequest1, formRequest2, formRequest3]).then(function (values) {
-        combinedForms["form1"] = values[0];
-        combinedForms["form2"] = values[1];
-        combinedForms["form3"] = values[2];
-        combinedForms["form4"] = values[3];
-        return values;
-      })
-      sayHello(result);
-    }
-
-    function sayHello(result) {
-      console.log('hello :): 1st', result[0])
-      console.log('hello :) 2nd', result[1])
-      console.log('hello :) 3rd', result[2])
-      // append to dom
-    }
-
-    x();
-
     async function formRequest(formURL, postType) {
       let result = fetch(formURL, {
           method: postType
@@ -112,10 +93,131 @@
     }
   };
 
+  const allForms = async function () {
+    let result = await Promise.all([formRequest1, formRequest2, formRequest3, formRequest4])
+      .then(function (values) {
+        // combinedForms["form1"] = values[0];
+        // combinedForms["form2"] = values[1];
+        // combinedForms["form3"] = values[2];
+        // combinedForms["form4"] = values[3];
+        return values;
+      })
+    makeForms(result);
+  };
+
+  allForms();
+
+  function makeForms(result) {
+    const form1 = result[0];
+    const form2 = result[1];
+    const form3 = result[2];
+    const form4 = result[3];
+    const resultArray = result;
+
+    const questionSection = document.querySelector('.questions');
+    const startButton = document.querySelector('.action-button-js');
+    const startScreen = document.querySelector('.start');
+    const backButton = document.querySelector('.back-button');
+
+    makeForm1()
+
+    function makeForm1() {
+      startButton.addEventListener('click', function () {
+        event.preventDefault();
+        startScreen.classList.add('hidden');
+        backButton.classList.add('visible');
+
+        questionSection.appendChild(form1)
+        makeForm2()
+      })
+    }
+
+
+    function makeForm2() {
+      const activeForm = document.querySelector('#form1')
+      activeForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        questionSection.appendChild(form2)
+        makeForm3()
+      })
+    }
+
+    function makeForm3() {
+      const activeForm = document.querySelector('#form2')
+      activeForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        console.log(activeForm)
+        questionSection.appendChild(form3)
+        makeForm4()
+      })
+    }
+
+    function makeForm4() {
+      const activeForm = document.querySelector('#form3')
+      activeForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        questionSection.appendChild(form4)
+        getResults();
+      })
+    }
+  }
+
+  function getResults() {
+    // const activeForm = document.querySelector('#form4')
+    // activeForm.addEventListener('submit', function (event) {
+    //   event.preventDefault();
+    //   console.log('ready for results')
+    // });
+    var allResults = document.forms;
+
+    console.log(allResults)
+
+  };
+
+  // function getFinalResult() {
+  //   let finalResult = fetch('http://localhost:2000/quiz/result', {
+  //       method: 'POST'
+  //     })
+  //     .then(function (response) {
+  //       return response.text()
+  //     })
+  //     .then(function (html) {
+  //       console.log(html)
+  //       var parser = new DOMParser();
+  //       var doc = parser.parseFromString(html, "text/html");
+  //       console.log(doc)
+  //     }).catch(function (err) {
+  //       console.log('Failed to fetch page: ', err);
+  //     });
+  //   console.log(finalResult)
+  //   return finalResult;
+  // }
+
+  //   app.post('/quiz/result', async function (req, res) {
+  //     await fs.readFile('./app/data/ingredients.json', (err, data) => {  
+  //         if (err) throw err;
+  //         const state = {
+  //             skin_type: req.body.skin_type,
+  //             routine: req.body.routine,
+  //             skin_concern: req.body.skin_concern.split(','),
+  //             shave: req.body.shave,
+  //             makeup: req.body.makeup,
+  //             data:  JSON.parse(data)
+  //         }
+  //         console.log(state)
+  //         res.render('quiz/result', state)
+  //     });    
+  // })
 
 
 
-  var startScreen = querySelector('.start');
+
+
+
+
+
+
+  var startScreen = document.querySelector('.start');
 
 
 
